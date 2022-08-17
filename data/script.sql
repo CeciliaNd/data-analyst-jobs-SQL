@@ -28,9 +28,49 @@ GROUP by location */
 FROM data_analyst_jobs
 GROUP BY title */
 
-SELECT company, AVG(star_rating) AS avg_rating
+ /* SELECT company, AVG(star_rating) AS avg_rating
 FROM data_analyst_jobs
+GROUP BY company */
+
+/* SELECT title, count(*)
+FROM data_analyst_jobs 
+GROUP BY title */
+
+/* SELECT title, count(*)
+FROM data_analyst_jobs
+WHERE location = 'CA'
+GROUP BY title */
+
+/* SELECT company, AVG(star_rating) AS avg_star_rating, count(*)
+From data_analyst_jobs
+WHERE review_count > 5000
 GROUP BY company
+order by avg_rating DESC*/
+
+/* SELECT company, AVG(star_rating) AS avg_star_rating, count(*)
+From data_analyst_jobs
+WHERE review_count > 5000
+GROUP BY company
+ORDER BY AVG(star_rating) DESC */
+
+/*SELECT COUNT (Distinct(title))
+FROM data_analyst_jobs
+WHERE title LIKE '%Analyst%'*/
+
+/* SElect title
+FROM data_analyst_jobs
+WHERE title LIKE '%Analyst%' */
+
+SELECT domain, COUNT(title)
+FROM data_analyst_jobs
+WHERE skill like '%SQL%' AND days_since_posting > 21 AND domain is NOT NULL
+GROUP BY domain
+ORDER BY COUNT(title) DESC
+LIMIT 4;
+
+
+
+
 
 
 
